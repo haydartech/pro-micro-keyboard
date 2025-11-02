@@ -4,6 +4,8 @@ Overview
 - Purpose: lightweight Arduino sketch to run a 5×15 (68-key) Skyforce/Tada68-style keyboard using an Arduino Pro Micro and a single PCF8574 I2C I/O expander.
 - Hardware: Pro Micro (ATmega32U4) + PCF8574 (I2C). PCF8574 provides columns 0..7; the Pro Micro provides columns 8..14 and row drives.
 - Firmware: `SkyForce-Keyboard.ino` scans the matrix and uses the Arduino `Keyboard` library to send HID events. `keymap.h` holds the key layout.
+![WhatsApp Image 2025-11-03 at 00 55 08(1)](https://github.com/user-attachments/assets/769a0e33-9ae9-4c59-9e37-46051d4e1944)
+![WhatsApp Image 2025-11-03 at 00 55 08](https://github.com/user-attachments/assets/99a73de5-d6f1-43c2-8b42-b9f4ce5db00d)
 
 Quick start
 1. Open `SkyForce-Keyboard/SkyForce-Keyboard.ino` in Arduino IDE (or VS Code + Arduino).
@@ -38,20 +40,9 @@ Notes about the PCF8574
 - The PCF8574 uses quasi-bidirectional I/O. The sketch writes 0xFF before reading and retries reads to handle bus glitches.
 - If your PCF isn't responding, check wiring, address, pull-ups on SDA/SCL, and run the serial pin diagnostic (enable `DEBUG_SERIAL` and open Serial Monitor at 115200).
 
-Wiring diagram
-- A clean wiring diagram is included in the repo:
-  - SVG: `SkyForce-Keyboard/wiring-diagram-clean.svg`
-  - PDF: `SkyForce-Keyboard/wiring-diagram-clean.pdf`
-
-Exporting the diagram to PDF (optional)
-If you prefer to generate the PDF yourself using a headless browser, here are example PowerShell commands (update browser path if needed):
-
-```powershell
-& 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' --headless --disable-gpu --print-to-pdf="C:\path\to\wiring-diagram-clean.pdf" "file:///C:/Users/hayda/Desktop/JEDI/Projects/SkyForce-Keyboard/wiring-diagram-clean.svg"
-```
-
 Behavior and keymap
-- `keymap.h` contains a 5×15 KC_ layout (Tada68-like). The firmware maps `KC_*` tokens to ASCII or HID using `send_key_down()` / `send_key_up()`; printable characters are sent as ASCII and modifiers/special keys use press/release semantics.
+- `keymap.h` contains a 5×15 KC_ layout (Tada68-like). The firmware maps `KC_*` tokens to ASCII or HID using `send_key_down()` / `send_key_up()`; printable characters are sent as ASCII and modifiers/special keys use press/release semantics.![WhatsApp Image 2025-11-03 at 00 55 08(1)](https://github.com/user-attachments/assets/d7c5380f-0420-413d-917a-45b2031e6f5a)
+
 - To change keys, edit `keymap.h` and re-upload.
 
 Troubleshooting
@@ -69,6 +60,5 @@ License / Notes
 Path
 - Source: `SkyForce-Keyboard/SkyForce-Keyboard.ino`
 - Layout: `SkyForce-Keyboard/keymap.h`
-- Diagram: `SkyForce-Keyboard/wiring-diagram-clean.svg` and `.pdf`
 
 If you want any wording changed or extra details added (pin labeling per Pro Micro pad, PCB mapping, or a printable one-page diagram), tell me exactly how you want it and I'll update this README.
