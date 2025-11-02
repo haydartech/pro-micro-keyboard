@@ -41,7 +41,7 @@ Notes about the PCF8574
 - If your PCF isn't responding, check wiring, address, pull-ups on SDA/SCL, and run the serial pin diagnostic (enable `DEBUG_SERIAL` and open Serial Monitor at 115200).
 
 Behavior and keymap
-- `keymap.h` contains a 5×15 KC_ layout (Tada68-like). The firmware maps `KC_*` tokens to ASCII or HID using `send_key_down()` / `send_key_up()`; printable characters are sent as ASCII and modifiers/special keys use press/release semantics.![WhatsApp Image 2025-11-03 at 00 55 08(1)](https://github.com/user-attachments/assets/d7c5380f-0420-413d-917a-45b2031e6f5a)
+- `keymap.h` contains a 5×15 KC_ layout (Tada68-like). The firmware maps `KC_*` tokens to ASCII or HID using `send_key_down()` / `send_key_up()`; printable characters are sent as ASCII and modifiers/special keys use press/release semantics.
 
 - To change keys, edit `keymap.h` and re-upload.
 
