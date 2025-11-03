@@ -1,5 +1,5 @@
 Skyforce 68 — Arduino Pro Micro + PCF8574
-
+https://youtu.be/DPkXlkeJkJ0
 Overview
 - Purpose: lightweight Arduino sketch to run a 5×15 (68-key) Skyforce/Tada68-style keyboard using an Arduino Pro Micro and a single PCF8574 I2C I/O expander.
 - Hardware: Pro Micro (ATmega32U4) + PCF8574 (I2C). PCF8574 provides columns 0..7; the Pro Micro provides columns 8..14 and row drives.
